@@ -164,5 +164,5 @@ clientVersion:
   
 kustomizeVersion: v5.0.1
 
-8- Now out minikube cluster is running and kubectl is also installed.
+8- Now out minikube cluster is running and kubectl is also installed. We can use it to deploy containers and get to know how kubernetes works and it's various components.
 

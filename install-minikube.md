@@ -28,17 +28,24 @@ https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/
 https://minikube.sigs.k8s.io/docs/start/
 
 =================
+
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 ]# minikube start
+
 😄  minikube v1.30.1 on Redhat 8.7
+
 ✨  Automatically selected the docker driver. Other choices: none, ssh
+
 🛑  The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.
+
 💡  If you are running minikube within a VM, consider using --driver=none:
+
 📘    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
 
-❌  Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
+   Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
+
 =================
 
 4- minikube was refusing to start as I was working as root user, so I gave --force to use as root user.
@@ -46,29 +53,53 @@ $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 =================
 
 ]# minikube start --force
+
 😄  minikube v1.30.1 on Redhat 8.7
+
 ❗  minikube skips various validations when --force is supplied; this may lead to unexpected behavior
+
 ✨  Automatically selected the docker driver. Other choices: none, ssh
+
 🛑  The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.
+
 💡  If you are running minikube within a VM, consider using --driver=none:
+
 📘    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+
 📌  Using Docker driver with root privileges
+
 👍  Starting control plane node minikube in cluster minikube
+
 🚜  Pulling base image ...
+
 💾  Downloading Kubernetes v1.26.3 preload ...
+
     > preloaded-images-k8s-v18-v1...:  397.02 MiB / 397.02 MiB  100.00% 102.95 
+    
     > gcr.io/k8s-minikube/kicbase...:  373.53 MiB / 373.53 MiB  100.00% 16.47 M
+    
 🔥  Creating docker container (CPUs=2, Memory=2200MB) ...
+
 🐳  Preparing Kubernetes v1.26.3 on Docker 23.0.2 ...
+
     ▪ Generating certificates and keys ...
+    
     ▪ Booting up control plane ...
+    
     ▪ Configuring RBAC rules ...
+    
 🔗  Configuring bridge CNI (Container Networking Interface) ...
+
     ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+    
 🔎  Verifying Kubernetes components...
+
 🌟  Enabled addons: storage-provisioner, default-storageclass
+
 💡  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
+
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
 
 =================
 
@@ -78,6 +109,7 @@ $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 
 ]# docker ps
+
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                                                                                                                  NAMES
 62ac99228292   gcr.io/k8s-minikube/kicbase:v0.0.39   "/usr/local/bin/entr…"   About a minute ago   Up About a minute   127.0.0.1:32772->22/tcp, 127.0.0.1:32771->2376/tcp, 127.0.0.1:32770->5000/tcp, 127.0.0.1:32769->8443/tcp, 127.0.0.1:32768->32443/tcp   minikube
 
@@ -86,12 +118,19 @@ CONTAINER ID   IMAGE                                 COMMAND                  CR
 6- Check minikube status:
 
 =================
+
 ]# minikube status
+
 minikube
+
 type: Control Plane
+
 host: Running
+
 kubelet: Running
+
 apiserver: Running
+
 kubeconfig: Configured
 
 =================
@@ -102,16 +141,27 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 
 ]# kubectl version --client --output=yaml
+
 clientVersion:
+
   buildDate: "2023-05-17T14:20:07Z"
+  
   compiler: gc
+  
   gitCommit: 7f6f68fdabc4df88cfea2dcf9a19b2b830f1e647
+  
   gitTreeState: clean
+  
   gitVersion: v1.27.2
+  
   goVersion: go1.20.4
+  
   major: "1"
+  
   minor: "27"
+  
   platform: linux/amd64
+  
 kustomizeVersion: v5.0.1
 
 8- Now out minikube cluster is running and kubectl is also installed.
